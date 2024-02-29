@@ -127,11 +127,14 @@ class _BigShoeCardState extends State<BigShoeCard>
                   width: BigShoeCard.width,
                   height: BigShoeCard.height,
                   alignment: Alignment.center,
-                  child: Image.asset(
-                    widget.shoe.image,
-                    fit: BoxFit.cover,
-                    width: BigShoeCard.width,
-                    height: 181.w,
+                  child: Hero(
+                    tag: 'image_${widget.shoe.image}',
+                    child: Image.asset(
+                      widget.shoe.image,
+                      fit: BoxFit.cover,
+                      width: BigShoeCard.width,
+                      height: 181.w,
+                    ),
                   ),
                 ),
               ),
