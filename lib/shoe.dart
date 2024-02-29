@@ -22,14 +22,14 @@ class Shoe {
           bgColor: AppColors.secondary,
         ),
         Shoe(
-          name: 'HYPERSONIC',
-          price: 'IDR 1,199,000',
+          name: 'HYPERDRIVE',
+          price: 'IDR 539,100',
           image: 'assets/images/big_shoe2.png',
           bgColor: AppColors.tertiary,
         ),
         Shoe(
-          name: 'HYPERSONIC',
-          price: 'IDR 1,199,000',
+          name: 'HYPERFUSE',
+          price: 'IDR 649,000',
           image: 'assets/images/big_shoe3.png',
           bgColor: AppColors.neutral400,
         ),
