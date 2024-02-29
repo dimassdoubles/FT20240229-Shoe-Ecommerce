@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoes_ecommerce/constants/app_colors.dart';
 import 'package:shoes_ecommerce/constants/app_texts.dart';
-import 'package:shoes_ecommerce/widgets/gaps.dart';
-import 'package:shoes_ecommerce/widgets/mini_shoe_card.dart';
+import 'package:shoes_ecommerce/home/widgets/gaps.dart';
+import 'package:shoes_ecommerce/home/widgets/mini_shoe_card.dart';
 
 class MiniShoeCardList extends StatelessWidget {
   const MiniShoeCardList({

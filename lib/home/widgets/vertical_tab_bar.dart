@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shoes_ecommerce/constants/app_colors.dart';
 import 'package:shoes_ecommerce/constants/app_sizes.dart';
 import 'package:shoes_ecommerce/constants/app_texts.dart';
-import 'package:shoes_ecommerce/widgets/big_shoe_card.dart';
-import 'package:shoes_ecommerce/widgets/gaps.dart';
+import 'package:shoes_ecommerce/home/widgets/big_shoe_card.dart';
+import 'package:shoes_ecommerce/home/widgets/gaps.dart';
 
 class VerticalTabBar extends StatelessWidget {
   const VerticalTabBar({

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoes_ecommerce/constants/app_colors.dart';
-import 'package:shoes_ecommerce/widgets/big_shoe_page_view.dart';
-import 'package:shoes_ecommerce/widgets/custom_app_bar.dart';
-import 'package:shoes_ecommerce/widgets/gaps.dart';
-import 'package:shoes_ecommerce/widgets/horizontal_tab_bar.dart';
-import 'package:shoes_ecommerce/widgets/mini_shoe_card_list.dart';
-import 'package:shoes_ecommerce/widgets/vertical_tab_bar.dart';
+import 'package:shoes_ecommerce/home/widgets/big_shoe_page_view.dart';
+import 'package:shoes_ecommerce/home/widgets/custom_app_bar.dart';
+import 'package:shoes_ecommerce/home/widgets/gaps.dart';
+import 'package:shoes_ecommerce/home/widgets/horizontal_tab_bar.dart';
+import 'package:shoes_ecommerce/home/widgets/mini_shoe_card_list.dart';
+import 'package:shoes_ecommerce/home/widgets/vertical_tab_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

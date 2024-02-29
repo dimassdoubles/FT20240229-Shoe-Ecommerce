@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shoes_ecommerce/constants/app_colors.dart';
 import 'package:shoes_ecommerce/shoe.dart';
-import 'package:shoes_ecommerce/widgets/big_shoe_card.dart';
+import 'package:shoes_ecommerce/home/widgets/big_shoe_card.dart';
 
 class BigShoePageView extends StatefulWidget {
   final PageController controller;

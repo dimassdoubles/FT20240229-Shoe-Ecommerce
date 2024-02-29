@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoes_ecommerce/constants/app_colors.dart';
 import 'package:shoes_ecommerce/constants/app_texts.dart';
-import 'package:shoes_ecommerce/widgets/shoe_card_header.dart';
+import 'package:shoes_ecommerce/home/widgets/shoe_card_header.dart';
 
 class MiniShoeCard extends StatelessWidget {
   final String shoe;

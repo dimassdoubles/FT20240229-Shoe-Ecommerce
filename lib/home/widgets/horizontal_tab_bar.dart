@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shoes_ecommerce/widgets/gaps.dart';
-import 'package:shoes_ecommerce/widgets/horizontal_tab_item.dart';
+import 'package:shoes_ecommerce/home/widgets/gaps.dart';
+import 'package:shoes_ecommerce/home/widgets/horizontal_tab_item.dart';
 
 class HorizontalTabBar extends StatelessWidget {
   const HorizontalTabBar({
