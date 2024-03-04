@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoes_ecommerce/constants/app_colors.dart';
@@ -16,11 +15,11 @@ class DetailAppBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          GestureDetector(
-            onTap: () {
+          IconButton(
+            onPressed: () {
               Navigator.pop(context);
             },
-            child: RotatedBox(
+            icon: RotatedBox(
               quarterTurns: 2,
               child: Image.asset(
                 'assets/icons/ic_arrow_white.png',
@@ -34,11 +33,11 @@ class DetailAppBar extends StatelessWidget {
             ),
           ),
           Container(
-            width: 24.w,
-            height: 24.w,
+            width: 30.w,
+            height: 30.w,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: AppColors.neutral600.withOpacity(0.2),
+              color: AppColors.neutral600.withOpacity(0.05),
             ),
             child: Image.asset(
               'assets/icons/ic_favorite_white.png',
