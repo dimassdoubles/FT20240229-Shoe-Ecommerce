@@ -10,7 +10,29 @@ import 'package:shoes_ecommerce/shoe.dart';
 
 class DetailPage extends StatelessWidget {
   final Shoe shoe;
-  const DetailPage(this.shoe, {super.key});
+  final Animation<double> animation;
+  const DetailPage({
+    super.key,
+    required this.shoe,
+    required this.animation,
+  });
+
+  Animation<double> get interval1 => CurvedAnimation(
+        parent: animation,
+        curve: const Interval(
+          0.4,
+          1,
+          curve: Curves.easeIn,
+        ),
+      );
+  Animation<double> get interval2 => CurvedAnimation(
+        parent: animation,
+        curve: const Interval(
+          0.9,
+          1,
+          curve: Curves.easeIn,
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -35,18 +57,19 @@ class DetailPage extends StatelessWidget {
                       ),
                       Transform(
                         transform: Matrix4.translationValues(0, -30.w, 0),
-                        child: ShoeDescription(shoe: shoe),
+                        child: ShoeDescription(
+                          shoe: shoe,
+                          animation: interval1,
+                        ),
                       ),
                     ],
                   ),
                 ),
               ),
-              const AddToBagButton(),
+              AddToBagButton(animation: interval2),
             ],
           ),
-          const SafeArea(
-            child: DetailAppBar(),
-          ),
+          const SafeArea(child: DetailAppBar()),
         ],
       ),
     );

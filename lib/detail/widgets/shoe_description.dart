@@ -10,24 +10,21 @@ class ShoeDescription extends StatelessWidget {
   const ShoeDescription({
     super.key,
     required this.shoe,
-    this.animation = const AlwaysStoppedAnimation<double>(1),
+    required this.animation,
   });
 
   final Shoe shoe;
   final Animation<double> animation;
 
-  Animation<double> get _interval1 => CurvedAnimation(
-        parent: animation,
-        curve: const Interval(0.4, 1, curve: Curves.easeIn),
-      );
-
   @override
   Widget build(BuildContext context) {
     return SlideTransition(
-      position: Tween(begin: const Offset(0, 2), end: Offset.zero)
-          .animate(_interval1),
+      position: Tween(
+        begin: const Offset(0, 1),
+        end: Offset.zero,
+      ).animate(animation),
       child: FadeTransition(
-        opacity: _interval1,
+        opacity: animation,
         child: Column(
           children: [
             Padding(
@@ -58,7 +55,7 @@ class ShoeDescription extends StatelessWidget {
                   ),
                   Gaps.v16,
                   Text(
-                    'Ort-shoX merupakan teknologi pada insole yang didesain mengikuti kontur telapak kaki untuk mencegah cedera.',
+                    'Ort-shoX merupakan teknologi pada insole yang didesain mengikuti kontur telapak kaki untuk mencegah cedera.',
                     style: AppTexts.text2(color: AppColors.neutral500),
                   ),
                   Gaps.v12,

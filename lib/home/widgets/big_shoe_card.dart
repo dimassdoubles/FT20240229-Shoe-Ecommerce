@@ -38,7 +38,10 @@ class _BigShoeCardState extends State<BigShoeCard>
             reverseTransitionDuration: const Duration(milliseconds: 800),
             pageBuilder: (_, animation, __) => FadeTransition(
               opacity: animation,
-              child: DetailPage(widget.shoe),
+              child: DetailPage(
+                animation: animation,
+                shoe: widget.shoe,
+              ),
             ),
           ),
         );
