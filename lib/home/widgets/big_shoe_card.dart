@@ -77,28 +77,31 @@ class _BigShoeCardState extends State<BigShoeCard>
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'ORTUSEIGHT',
-                                style: AppTexts.text2(
-                                  color: AppColors.neutral100,
+                          Material(
+                            type: MaterialType.transparency,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'ORTUSEIGHT',
+                                  style: AppTexts.text2(
+                                    color: AppColors.neutral100,
+                                  ),
                                 ),
-                              ),
-                              Text(
-                                widget.shoe.name,
-                                style: AppTexts.text6(
-                                  color: AppColors.neutral100,
+                                Text(
+                                  widget.shoe.name,
+                                  style: AppTexts.text6(
+                                    color: AppColors.neutral100,
+                                  ),
                                 ),
-                              ),
-                              Text(
-                                'IDR 1,199,000',
-                                style: AppTexts.text2(
-                                  color: AppColors.neutral100,
+                                Text(
+                                  widget.shoe.price,
+                                  style: AppTexts.text2(
+                                    color: AppColors.neutral100,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                           Image.asset(
                             'assets/icons/ic_favorite_white.png',
