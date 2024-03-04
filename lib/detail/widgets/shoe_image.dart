@@ -17,7 +17,7 @@ class ShoeImage extends StatelessWidget {
       tag: 'image_${shoe.image}',
       child: AnimatedRotation(
         duration: const Duration(milliseconds: 300),
-        turns: pi / 140,
+        turns: pi / 139,
         child: Image.asset(shoe.image),
       ),
     );

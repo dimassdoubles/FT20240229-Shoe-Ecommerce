@@ -9,37 +9,30 @@ class CurveBackground extends StatelessWidget {
   });
 
   final Shoe shoe;
+  static double height = 559.w;
+  static double width = 550.w;
 
   @override
   Widget build(BuildContext context) {
-    return ClipPath(
-      clipper: CustomClipPath(),
-      child: Container(
-        color: shoe.bgColor,
-        height: 1.sh,
-      ),
+    return Stack(
+      children: [
+        Positioned(
+          top: -0.45.sh,
+          left: -42.w,
+          height: height,
+          width: width,
+          child: Hero(
+            tag: 'bg_${shoe.id}',
+            child: Container(
+              width: 1.sw,
+              decoration: BoxDecoration(
+                color: shoe.bgColor,
+                borderRadius: BorderRadius.circular(height),
+              ),
+            ),
+          ),
+        ),
+      ],
     );
-  }
-}
-
-class CustomClipPath extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    double w = size.width;
-    double h = size.height;
-
-    var path = Path();
-
-    path.moveTo(0, 0.15 * h);
-    path.quadraticBezierTo(0.5 * w, 0.5 * h, w, 0.3 * h);
-    path.lineTo(w, 0);
-    path.lineTo(0, 0);
-
-    return path;
-  }
-
-  @override
-  bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
-    return false;
   }
 }

@@ -33,8 +33,13 @@ class _BigShoeCardState extends State<BigShoeCard>
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(
-            builder: (context) => DetailPage(widget.shoe),
+          PageRouteBuilder(
+            transitionDuration: const Duration(milliseconds: 800),
+            reverseTransitionDuration: const Duration(milliseconds: 800),
+            pageBuilder: (_, animation, __) => FadeTransition(
+              opacity: animation,
+              child: DetailPage(widget.shoe),
+            ),
           ),
         );
       },
@@ -51,64 +56,67 @@ class _BigShoeCardState extends State<BigShoeCard>
               transform: Matrix4.identity()
                 ..setEntry(3, 2, 0.0015)
                 ..rotateY(pi * (-0.25 * widget.percent)),
-              child: Container(
-                width: 170.w,
-                height: BigShoeCard.height,
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: widget.shoe.bgColor,
-                  borderRadius: BorderRadius.circular(15.w),
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'ORTUSEIGHT',
-                              style: AppTexts.text2(
-                                color: AppColors.neutral100,
+              child: Hero(
+                tag: 'bg_${widget.shoe.id}',
+                child: Container(
+                  width: 170.w,
+                  height: BigShoeCard.height,
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: widget.shoe.bgColor,
+                    borderRadius: BorderRadius.circular(15.w),
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'ORTUSEIGHT',
+                                style: AppTexts.text2(
+                                  color: AppColors.neutral100,
+                                ),
                               ),
-                            ),
-                            Text(
-                              widget.shoe.name,
-                              style: AppTexts.text6(
-                                color: AppColors.neutral100,
+                              Text(
+                                widget.shoe.name,
+                                style: AppTexts.text6(
+                                  color: AppColors.neutral100,
+                                ),
                               ),
-                            ),
-                            Text(
-                              'IDR 1,199,000',
-                              style: AppTexts.text2(
-                                color: AppColors.neutral100,
+                              Text(
+                                'IDR 1,199,000',
+                                style: AppTexts.text2(
+                                  color: AppColors.neutral100,
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                        Image.asset(
-                          'assets/icons/ic_favorite_white.png',
+                            ],
+                          ),
+                          Image.asset(
+                            'assets/icons/ic_favorite_white.png',
+                            fit: BoxFit.cover,
+                            width: 21.w,
+                            height: 21.w,
+                          ),
+                        ],
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(bottom: 4),
+                        alignment: Alignment.bottomRight,
+                        child: Image.asset(
+                          'assets/icons/ic_arrow_white.png',
                           fit: BoxFit.cover,
                           width: 21.w,
-                          height: 21.w,
+                          height: 8.w,
                         ),
-                      ],
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(bottom: 4),
-                      alignment: Alignment.bottomRight,
-                      child: Image.asset(
-                        'assets/icons/ic_arrow_white.png',
-                        fit: BoxFit.cover,
-                        width: 21.w,
-                        height: 8.w,
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
